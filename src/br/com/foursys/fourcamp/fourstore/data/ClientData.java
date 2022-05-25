@@ -10,8 +10,8 @@ public class ClientData implements DataInterface {
 	List<Client> listClient = new ArrayList<>();
 
 	@Override
-	public void index() {
-		listClient.forEach(System.out::println);
+	public List<Client> index() {
+		return listClient;
 	}
 
 	@Override
@@ -30,6 +30,12 @@ public class ClientData implements DataInterface {
 	public String destroy(String cpf) {
 		listClient.removeIf(p -> p.getCpf() == cpf);
 		return cpf;
+	}
+
+	@Override
+	public Client update(String cpf) {
+		Client client = listClient.stream().filter(c -> c.getCpf() == cpf).findFirst().get();
+		return client;
 	}
 
 }

@@ -35,7 +35,10 @@ public class Client {
 		this.pixKey = pixKey;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Cliente: " + this.name + " - " + "CPF: " +this.cpf; 
+	}
 	
 	
 }

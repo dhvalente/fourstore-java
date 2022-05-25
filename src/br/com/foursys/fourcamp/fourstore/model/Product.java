@@ -21,9 +21,8 @@ public class Product {
 		this.quantity = quantity;
 	}	
 
-	public Product(String sku, Integer quantity, Double purchasePrice, Double salePrice) {
+	public Product(String sku, Double purchasePrice, Double salePrice) {
 		this.sku = sku;
-		this.quantity = quantity;
 		this.purchasePrice = purchasePrice;
 		this.salePrice = salePrice;
 		parseSku(sku);
@@ -144,7 +143,7 @@ public class Product {
 	
 	@Override
 	public String toString() {
-		return "Descrição: " + this.description + " - " + "Preço de venda: " +this.salePrice; 
+		return "[ Descrição: " + this.description + " - " + "Quantidade: "+ this.quantity + " - " +"Preço de venda: " +this.salePrice+" ]"; 
 	}
 
 }
